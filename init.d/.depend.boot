@@ -1,4 +1,4 @@
-TARGETS = console-setup mountkernfs.sh resolvconf ufw apparmor plymouth-log screen-cleanup hostname.sh udev keyboard-setup cryptdisks cryptdisks-early open-iscsi networking iscsid urandom hwclock.sh checkroot.sh lvm2 checkfs.sh mountdevsubfs.sh mountall.sh mountall-bootclean.sh bootmisc.sh mountnfs-bootclean.sh mountnfs.sh kmod checkroot-bootclean.sh procps
+TARGETS = console-setup mountkernfs.sh resolvconf ufw apparmor plymouth-log screen-cleanup hostname.sh ebtables udev keyboard-setup cryptdisks cryptdisks-early open-iscsi networking iscsid urandom hwclock.sh checkroot.sh lvm2 checkfs.sh mountdevsubfs.sh mountall.sh mountall-bootclean.sh bootmisc.sh mountnfs-bootclean.sh mountnfs.sh kmod checkroot-bootclean.sh procps
 INTERACTIVE = console-setup udev keyboard-setup cryptdisks cryptdisks-early checkroot.sh checkfs.sh
 udev: mountkernfs.sh
 keyboard-setup: mountkernfs.sh udev

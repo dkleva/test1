@@ -54,3 +54,4 @@ ssh:x:114:
 user:x:1000:
 lpadmin:x:115:user
 sambashare:x:116:user
+docker:x:117:
