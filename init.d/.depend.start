@@ -1,6 +1,7 @@
-TARGETS = rsyslog unattended-upgrades lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad killprocs apport irqbalance atd mdadm single rsync cron dbus ssh acpid plymouth grub-common ondemand rc.local
+TARGETS = rsyslog ubuntu-fan unattended-upgrades lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lvm2-lvmetad killprocs apport irqbalance cgroupfs-mount atd mdadm single rsync cron dbus ssh acpid docker lxcfs plymouth rc.local ondemand grub-common
 INTERACTIVE =
 irqbalance: rsyslog
+cgroupfs-mount: rsyslog
 atd: rsyslog
 mdadm: rsyslog
 single: killprocs
@@ -9,7 +10,9 @@ cron: rsyslog
 dbus: rsyslog
 ssh: rsyslog
 acpid: rsyslog
-plymouth: rsyslog irqbalance unattended-upgrades lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad atd mdadm rsync cron dbus ssh acpid apport
-grub-common: rsyslog irqbalance unattended-upgrades lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad atd mdadm rsync cron dbus ssh acpid apport
-ondemand: rsyslog irqbalance unattended-upgrades lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad atd mdadm rsync cron dbus ssh acpid apport
-rc.local: rsyslog irqbalance unattended-upgrades lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad atd mdadm rsync cron dbus ssh acpid apport
+docker: rsyslog cgroupfs-mount
+lxcfs: cgroupfs-mount
+plymouth: rsyslog irqbalance ubuntu-fan cgroupfs-mount unattended-upgrades docker lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad atd mdadm rsync cron dbus ssh acpid apport
+rc.local: rsyslog irqbalance ubuntu-fan cgroupfs-mount unattended-upgrades docker lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad atd mdadm rsync cron dbus ssh acpid apport
+ondemand: rsyslog irqbalance ubuntu-fan cgroupfs-mount unattended-upgrades docker lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad atd mdadm rsync cron dbus ssh acpid apport
+grub-common: rsyslog irqbalance ubuntu-fan cgroupfs-mount unattended-upgrades docker lvm2-lvmpolld open-vm-tools lxd uuidd xe-linux-distribution lxcfs lvm2-lvmetad atd mdadm rsync cron dbus ssh acpid apport
